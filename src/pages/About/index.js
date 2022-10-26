@@ -10,9 +10,7 @@ export default function About() {
       <Navbar />
       <section className={styles.wrap}>
         <h1>About Page</h1>
-        <Link to={"/about/detail"}>
-          Show detail :
-        </Link>
+        <Link to={"/about/detail"}>Show detail :</Link>
         {/* detail di sini */}
         <Outlet />
       </section>

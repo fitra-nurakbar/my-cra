@@ -6,9 +6,9 @@ export default function AboutDetail() {
       <h2>Fitra Nurakbar</h2>
       <div>
         <img
-          src='/assets/photo-profile.jpg'
-          alt='this is my profile'
-          loading='lazy'
+          src="/assets/photo-profile.jpg"
+          alt="this is my profile"
+          loading="lazy"
         />
         <p>Software Enginer</p>
       </div>

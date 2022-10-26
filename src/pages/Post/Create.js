@@ -12,21 +12,19 @@ export default function CreatePost() {
     content: "",
   });
   const [error, setError] = useState("");
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   function inputHandler(e) {
     const name = e.target.name;
-    
+
     setFields({
       ...fields,
       [name]: e.target.value,
     });
   }
 
-
   async function createHandler(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     const data = {
       title: fields.title,
@@ -41,14 +39,14 @@ export default function CreatePost() {
         body: JSON.stringify(data),
       });
       await req.json();
-      navigate("/post")
+      navigate("/post");
     } catch (err) {
-        setError(err)
+      setError(err);
     }
   }
 
-  if(error) {
-    return <h1>Data error</h1>
+  if (error) {
+    return <h1>Data error</h1>;
   }
 
   return (
@@ -58,21 +56,21 @@ export default function CreatePost() {
         <h1>Posts Page</h1>
         <div className={styles.card}>
           <form onSubmit={createHandler.bind(this)}>
-            <label htmlFor='title'>Title :</label>
+            <label htmlFor="title">Title :</label>
             <input
-              name='title'
+              name="title"
               onChange={inputHandler.bind(this)}
-              type='text'
-              id='title'
-              placeholder='Input title here'
+              type="text"
+              id="title"
+              placeholder="Input title here"
             />
-            <label htmlFor='content'>Content :</label>
+            <label htmlFor="content">Content :</label>
             <textarea
-              name='content'
+              name="content"
               onChange={inputHandler.bind(this)}
-              id='content'
+              id="content"
               rows={5}
-              placeholder='Input content here'
+              placeholder="Input content here"
             />
             <Button type="submit">Post</Button>
           </form>

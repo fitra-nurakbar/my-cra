@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
+import FileNotExist from "../../components/FileNotExist";
 import Layout from "../../components/Layout";
 import Navbar from "../../components/Navbar";
 import { urlMain } from "../../libs/endpoint";
@@ -9,6 +10,7 @@ import styles from "../../styles/Posts.module.css";
 
 export default function PostId() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
@@ -27,8 +29,20 @@ export default function PostId() {
     getData();
   }, [id]);
 
+  const deleteData = (id) => {
+    fetch(`${urlMain}/${id}`, {
+      method: "DELETE",
+    })
+      .then(() => {
+        navigate("/post");
+      })
+      .catch((err) => {
+        throw err;
+      });
+  };
+
   if (notFound) {
-    return <h1>Post does'nt exist</h1>;
+    return <FileNotExist>Post does'nt exist</FileNotExist>;
   }
 
   return (
@@ -39,7 +53,19 @@ export default function PostId() {
         {loading ? (
           <h1>Loading</h1>
         ) : (
-          <Card title={post.title} body={post.description} />
+          <Card
+            key={post.id}
+            title={post.title}
+            body={post.description}
+            button={
+              <>
+                <Button onClick={() => deleteData(post.id)}>Delete</Button>
+                <Link to={`/post/edit/${post.id}`}>
+                  <Button className="bg-green-500">Edit</Button>
+                </Link>
+              </>
+            }
+          />
         )}
       </section>
     </Layout>

@@ -5,17 +5,18 @@
   @apply text-xl font-semibold mb-5;
 }
 .card {
-  @apply max-w-[400px] mx-auto
+  @apply max-w-[400px] mx-auto;
 }
 .card form {
-  @apply flex flex-col border px-4 py-5 rounded-md
+  @apply flex flex-col border px-4 py-5 rounded-md;
 }
 .wrap form > label {
-  @apply font-semibold mb-2
+  @apply font-semibold mb-2;
 }
-.wrap form > input, textarea {
-  @apply px-3 py-1 border-2 rounded-md mb-5
+.wrap form > input,
+textarea {
+  @apply px-3 py-1 border-2 rounded-md mb-5;
 }
 .wrap button {
-  @apply rounded-md
+  @apply rounded-md;
 }
