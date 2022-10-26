@@ -9,7 +9,7 @@ export default function Home() {
     <Layout title={"Home"}>
       <Navbar />
       <section className={styles.wrap}>
-        <h1 className={styles.head}>Home</h1>
+        <h1 className={styles.head}>Home page</h1>
       </section>
     </Layout>
   );
