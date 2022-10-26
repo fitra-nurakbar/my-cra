@@ -1,0 +1,15 @@
+.header {
+  @apply shadow-md fixed w-full bg-white;
+}
+.wrap {
+  @apply flex justify-between items-center p-4 font-poppins;
+}
+.wrap > img {
+  @apply hover:drop-shadow-md cursor-pointer;
+}
+.wrap > nav {
+  @apply flex gap-5;
+}
+.wrap > nav > a {
+  @apply text-sm hover:scale-110 hover:text-green-300 transition-all duration-300;
+}

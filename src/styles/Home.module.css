@@ -1,0 +1,9 @@
+.wrap {
+  @apply flex flex-col gap-5 px-5 py-20;
+}
+.wrap h1 {
+  @apply text-xl font-semibold;
+}
+.contents {
+  @apply grid md:grid-cols-2 gap-5;
+}

@@ -1,0 +1,18 @@
+.wrap {
+  @apply font-openSans px-5 py-20;
+}
+.wrap h1 {
+  @apply text-xl font-semibold;
+}
+.wrap h2 {
+  @apply text-5xl font-bold mt-5 text-center;
+}
+.wrap img {
+  @apply hover:scale-110 transition-all duration-300 cursor-pointer mx-auto w-[200px] h-[200px] object-cover rounded-full my-5 border-4;
+}
+.wrap p:nth-child(2) {
+  @apply text-center font-serif italic text-xl;
+}
+.wrap button {
+  @apply mt-5;
+}

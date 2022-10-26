@@ -1,0 +1,6 @@
+.card {
+  @apply md:grid-cols-2 shadow-md px-5 pt-5 pb-8 rounded-md border;
+}
+.card h2 {
+  @apply font-bold text-xl;
+}
