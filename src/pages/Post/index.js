@@ -67,21 +67,19 @@ export default function Post() {
           <div className={styles.contents}>
             {posts.map((data) => (
               // <Link key={data.id} to={`/post/${data.id}`}>
-                <Card
-                  key={data.id}
-                  title={data.title}
-                  body={data.description}
-                  button={
-                    <>
-                      <Button onClick={() => setHapusId(data.id)}>
-                        Delete
-                      </Button>
-                      <Link to={`/post/edit/${data.id}`}>
-                        <Button className="bg-green-500">Edit</Button>
-                      </Link>
-                    </>
-                  }
-                />
+              <Card
+                key={data.id}
+                title={data.title}
+                body={data.description}
+                button={
+                  <>
+                    <Button onClick={() => setHapusId(data.id)}>Delete</Button>
+                    <Link to={`/post/edit/${data.id}`}>
+                      <Button className="bg-green-500">Edit</Button>
+                    </Link>
+                  </>
+                }
+              />
               // </Link>
             ))}
           </div>
